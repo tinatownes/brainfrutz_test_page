@@ -16,51 +16,73 @@
   <link rel="shortcut icon" href="http://yourwebsite/images/favicon.ico" type="image/ico" />
   <link href="https://fonts.googleapis.com/css?family=Roboto:400" rel="stylesheet"/>
   <link href="testStyle.css" rel="stylesheet" type="text/css"/>
-
+  <!-- SlickNav -->
+  <link rel="stylesheet" href="slicknav.css">
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
 </head>
 
 <body>
-  <article>
+
+  <section>
     <h1>Tina Chi Townes</h1>
     <h3>UX Designer - Coder - Content Strategist</h3>
-       <ul id="navbar" data-role="listview" class="left">
-         <li><a href="#aboutMe" title="resume">Resume</a></li>
-         <li><a href="#" title="digitalArt">Digital Art &#8964</a>
-          <ul> 
-            <li><a href="table.html" target="_blank">Sample 1</a></li>
-            <li><a href="images/table_800.jpg" target="_blank">Sample 2</a></li>
-            <li><a href="#" target="_blank">Sample 3</a></li>
-            <li><a href="#" target="_blank">Sample 4</a></li>
-            <li><a href="#" target="_blank">Sample 5</a></li>
-          </ul>
-         <li><a href="#" title="caseStudies">Case Studies &#8964</a>  
-          <ul>
-            <li><a href="#" target="_blank">P.Tracker App</a></li>
-            <li><a href="#" target="_blank">Nonprofit Site</a></li>
-          </ul>
-          <li><a href="#" title="Projects">Projects &#8964</a>  
-          <ul>
-            <li><a href="#" target="_blank">Walking Tour Boston App</a></li>
-            <li><a href="#" target="_blank">Dancing Bee Game</a></li>
-            <li><a href="#" target="_blank">Graduate Student Bio Page</a></li>
-            <li><a href="#" target="_blank">E Commerce Site</a></li>
-          </ul>
+       
+	   <ul id="menu">
+         <li><a href="#aboutMe" title="resume">Resume</a>
+		 </li>
+         
+		 <li><a href="#" title="digitalArt">Digital Art</a>
+           <ul> 
+           <li><a href="table.html" target="_blank">Sample 1</a></li>
+           <li><a href="images/table_800.jpg" target="_blank">Sample 2</a></li>
+           <li><a href="#" target="_blank">Sample 3</a></li>
+           <li><a href="#" target="_blank">Sample 4</a></li>
+           </ul>
+         </li>
+		 
+		 <li><a href="#" title="caseStudies">Case Studies</a>  
+           <ul>
+           <li><a href="#" target="_blank">P.Tracker App</a></li>
+           <li><a href="#" target="_blank">Nonprofit Site</a></li>
+           </ul>
+		 </li>  
+		   
+         <li><a href="#" title="Projects">Projects</a>  
+           <ul>
+           <li><a href="#" target="_blank">Walking Tour Boston App</a></li>
+           <li><a href="#" target="_blank">Graduate Student Bio Page</a></li>
+           <li><a href="#" target="_blank">E Commerce Site</a></li>
+		   <li><a href="#" target="_blank">Bee Tracking App</a></li>
+           </ul>
+		 </li>
+		 
          <li><a href="#contact" title="Contact">Contact</a>
-        </ul>
-
-      <p id="aboutMe">I am a passionate self-taught front-end designer and coder dedicated to <strong>clean, intuitive, and responsive design</strong>. Positive user experience is my focus.</p> 
-      <p>My background as a visual artist and former corporate communications specialist enriches me with unique perspectives. Visit <a href="https://github.com/tinatownes">my GitHub page</a> to view the source code to my projects.</p>
+		 </li>	 
+       </ul>
+      
+	  <div id="about">  
+        <p>I am a passionate self-taught front-end designer and coder dedicated to <strong>clean, intuitive, and responsive design</strong>. Positive user experience is my focus.</p> 
+        <p>My background as a visual artist and former corporate communications specialist enriches me with unique perspectives. Visit <a href="https://github.com/tinatownes">my GitHub page</a> to view the source code to my projects.</p>
+	  </div>
+    
     <footer> 
     <h3 id="contact">Let's Talk!</h3>
        <p>Email</p>
        <p>#Twitter</p>
        <p>GitHub</p>
     </footer>
+  
+  </section>
+  
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script src="jquery.slicknav.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+	  $('#menu').slicknav();
+    });
+  </script>
 
-  </article>
-  </div>
-  </div>
-</body>
+  </body>
 </html>
 
