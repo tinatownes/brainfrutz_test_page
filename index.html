@@ -15,7 +15,7 @@
   <!-- This is needed for IE -->
   <link rel="shortcut icon" href="http://yourwebsite/images/favicon.ico" type="image/ico" />
   <link href="https://fonts.googleapis.com/css?family=Roboto:400" rel="stylesheet"/>
-  <link href="testStyle.css" rel="stylesheet" type="text/css"/>
+  <link href="style.css" rel="stylesheet" type="text/css"/>
   <!-- SlickNav -->
   <link rel="stylesheet" href="slicknav.css">
   <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -28,8 +28,8 @@
     <h1>Tina Chi Townes</h1>
     <h3>UX Designer - Coder - Content Strategist</h3>
        
-	   <ul id="menu">
-         <li><a href="#aboutMe" title="resume">Resume</a>
+	   <ul class="menu">
+         <li><a href="#" title="resume">Resume</a>
 		 </li>
          
 		 <li><a href="#" title="digitalArt">Digital Art</a>
@@ -57,7 +57,7 @@
            </ul>
 		 </li>
 		 
-         <li><a href="#contact" title="Contact">Contact</a>
+         <li><a href="#" title="Contact">Contact</a>
 		 </li>	 
        </ul>
       
@@ -79,8 +79,21 @@
   <script src="jquery.slicknav.js"></script>
   <script type="text/javascript">
     $(document).ready(function(){
-	  $('#menu').slicknav();
+	  $('.menu').slicknav();
     });
+    
+    $("div, html").on("click", function (event) { 
+    if(!$(event.target).hasClass(".menu a") && 
+    !$(event.target).hasClass("ul.slicknav_nav li a") && 
+    !$(event.target).hasClass("slicknav_menutxt") && 
+    !$(event.target).hasClass("slicknav_icon") && 
+    !$(event.target).hasClass("slicknav_icon-bar") &&
+    !$(event.target).hasClass("slicknav_btn")) {   
+        $(".menu").slicknav('close'); 
+    }
+});
+
+
   </script>
 
   </body>

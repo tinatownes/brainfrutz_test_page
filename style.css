@@ -21,7 +21,7 @@ h1 {
 /*MOBILE DISPLAY*/
 @media (max-width:959px){
 
-    .js #menu {
+    .js .menu {
 		display:none;
 	}
 	
@@ -65,7 +65,7 @@ h1 {
 	
     
 	/*
-    #menu{
+    .menu{
         list-style:none;
         margin-left:5px;
         float:left;
@@ -73,13 +73,13 @@ h1 {
         background-color:#ffffff;
     }
     
-    #menu li{
+    .menu li{
         position:relative;
         width:100%;
         margin-left:-40px;
     }
     
-    #menu a{
+    .menu a{
         font-size:1.1rem;
         display:block;
         width:96%;
@@ -91,26 +91,26 @@ h1 {
         border-bottom:thin solid black;
     }
     
-    #menu a:hover{
+    .menu a:hover{
         text-decoration:none;
     }
     
     alter submenus in mobile devices
 
-    #menu ul{
+    .menu ul{
         display:none;
     }
 
-    #menu ul li{
+    .menu ul li{
         float:none;
         margin-left:-30px;
     }
 
-    #menu ul a{
+    .menu ul a{
         white-space:nowrap;
     }
 
-    #menu li:hover ul{
+    .menu li:hover ul{
         display:block;
         list-style:none;
         position:absolute;
@@ -118,17 +118,17 @@ h1 {
         width:100%;
     }
 
-    #menu li:hover a{
+    .menu li:hover a{
         text-decoration:none;
         background-color:#e5e8e7;
     }
 
-    #menu li:hover ul a{
+    .menu li:hover ul a{
         text-decoration:none;
         margin-left:-15px;
     }
     
-    #menu li:hover ul li a:hover{
+    .menu li:hover ul li a:hover{
         background-color:#ffd859;
     } */
 }
@@ -137,7 +137,9 @@ h1 {
 /*LARGE DISPLAY*/
 @media (min-width:960px){
     
-    
+    .js .slicknav_menu {
+        display:none;
+    }
 
     p, h1, h2, h3{
         padding-left:10px;
@@ -157,7 +159,7 @@ h1 {
         line-height:.5;
     }
 
-    #menu{
+    .menu{
         list-style:none;
         margin-bottom:60px;
         margin-left:-55px;
@@ -167,7 +169,7 @@ h1 {
         background-color:#ffffff;
     }
 
-    #menu li{
+    .menu li{
         font-size:1.1rem;
         float:left;
         margin-right:45px;
@@ -175,7 +177,7 @@ h1 {
         position:relative;
     }
 
-    #menu a{
+    .menu a{
         display:block;
         padding:3px;
         background-color:#ffffff;
@@ -183,43 +185,43 @@ h1 {
         text-decoration:none;
     }
 
-    #menu a:hover{
+    .menu a:hover{
         text-decoration:none;
     }
 
-    #menu ul{
+    .menu ul{
         display:none;
     }
 
-    #menu ul li{
+    .menu ul li{
         padding-top:5px;
         float:none;
         margin-left:-25px;
     }
 
-    #menu ul a{
+    .menu ul a{
         white-space:nowrap;
     }
 
-    #menu li:hover ul{
+    .menu li:hover ul{
         display:block;
         list-style:none;
         position:absolute;
     }
 
-    #menu li:hover a{
+    .menu li:hover a{
         text-decoration:none;
         background-color:#e5e8e7;
         padding:3px;
     }
 
-    #menu li:hover ul a{
+    .menu li:hover ul a{
         text-decoration:none;
         margin-left:-15px;
         padding:3px 15px 3px 5px;
     }
     
-    #menu li:hover ul li a:hover{
+    .menu li:hover ul li a:hover{
         background-color:#ffd859;
     }
 }
