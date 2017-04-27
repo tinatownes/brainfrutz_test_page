@@ -157,7 +157,11 @@ h1 {
 
     footer{
         padding-top:25px;
-        line-height:.5;
+    }
+
+    br{
+        display:block;
+        margin:4px 0;
     }
 
     .menu{

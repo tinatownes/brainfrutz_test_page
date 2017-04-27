@@ -80,25 +80,12 @@
 	  $(".menu").slicknav();
     });
  
-    $("div, html").on("click", function (event) { 
-    event.stopPropagation();
-    if(
-      /*items & events you want menu to stay open for*/
-      !$(event.target).hasClass(".menu li") &&
-      !$(event.target).hasClass(".menu a") && 
-      !$(event.target).hasClass("ul.slicknav_nav li a") && 
-      !$(event.target).hasClass("slicknav_menutxt") &&
-      !$(event.target).hasClass("slicknav_icon") && 
-      !$(event.target).hasClass("slicknav_icon-bar") &&
-      !$(event.target).hasClass("slicknav_btn")) {   
-        $(".menu").slicknav('close'); 
-    }
-});
-
-  /* close menu on outside click 
+  /*close menu on outside click*/ 
   $("div, html").on("click", function (event) { 
     event.stopPropagation();
-    if(!$(event.target).hasClass(".menu a") && 
+    if(
+    !$(event.target).closest("li").children("ul").length && /*keeps submenus from closing*/
+    !$(event.target).hasClass(".menu a") && 
     !$(event.target).hasClass("ul.slicknav_nav li a") && 
     !$(event.target).hasClass("slicknav_menutxt") && 
     !$(event.target).hasClass("slicknav_icon") && 
@@ -106,7 +93,7 @@
     !$(event.target).hasClass("slicknav_btn")) {   
         $(".menu").slicknav('close'); 
     }
-});*/
+});
 
   </script>
 
