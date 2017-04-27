@@ -14,7 +14,7 @@
   <![endif]>
   <!-- This is needed for IE -->
   <link rel="shortcut icon" href="http://yourwebsite/images/favicon.ico" type="image/ico" />
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400" rel="stylesheet" />
   <link href="style.css" rel="stylesheet" type="text/css"/>
   <!-- SlickNav -->
   <link rel="stylesheet" href="slicknav.css">
@@ -62,15 +62,13 @@
        </ul>
       
 	  <div id="about">  
-        <p>I am a passionate self-taught front-end designer and coder dedicated to <strong>clean, intuitive, and responsive design</strong>. Positive user experience is my focus.</p> 
+        <p>I am a passionate self-taught front-end designer and coder dedicated to clean, intuitive, and responsive design. Positive user experience is my focus.</p> 
         <p>My background as a visual artist and former corporate communications specialist enriches me with unique perspectives. Visit <a href="https://github.com/tinatownes">my GitHub page</a> to view the source code to my projects.</p>
 	  </div>
     
     <footer> 
     <h3 id="contact">Let's Talk!</h3>
-       <p>Email</p>
-       <p>#Twitter</p>
-       <p>GitHub</p>
+       <p>Email <br> #Twitter <br> GitHub</p>
     </footer>
   
   </section>
@@ -79,10 +77,12 @@
   <script src="jquery.slicknav.js"></script>
   <script type="text/javascript">
     $(document).ready(function(){
-	  $('.menu').slicknav();
+	  $(".menu").slicknav();
     });
-    
-    $("div, html").on("click", function (event) { 
+ 
+  /* close menu on outside click */
+  $("div, html").on("click", function (event) { 
+    event.stopPropagation();
     if(!$(event.target).hasClass(".menu a") && 
     !$(event.target).hasClass("ul.slicknav_nav li a") && 
     !$(event.target).hasClass("slicknav_menutxt") && 
@@ -92,7 +92,6 @@
         $(".menu").slicknav('close'); 
     }
 });
-
 
   </script>
 

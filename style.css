@@ -7,11 +7,8 @@ body{
         background-color:#ffffff;
         padding:10px;
     }
-/*
-li{
-        font-size:1.2rem;
-    }
-*/
+
+
 h1 {
         font-size:2.5rem;
         font-family: 'Roboto', sans-serif;
@@ -48,6 +45,7 @@ h1 {
 
     p, h1, h2, h3{
         padding-left:6px;
+        font-weight:100;
     }
 
     section{
@@ -59,11 +57,14 @@ h1 {
     }
     
     a{
-        font-size:1.5rem;
-        text-decoration:none;
+        text-decoration:underline;
     }
 	
-    
+    a:visited{
+        color:#ffffff;
+
+    }
+
 	/*
     .menu{
         list-style:none;

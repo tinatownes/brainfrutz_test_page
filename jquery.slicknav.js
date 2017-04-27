@@ -17,9 +17,9 @@
             prependTo: 'body',
             appendTo: '',
             parentTag: 'a',
-            closeOnClick: false,
+            closeOnClick: true,
             allowParentLinks: false,
-            nestedParentLinks: true,
+            nestedParentLinks: false,
             showChildren: false,
             removeIds: true,
             removeClasses: false,
@@ -368,34 +368,47 @@
 
     // toggle clicked items
     Plugin.prototype._itemClick = function (el) {
-        var $this = this;
-        var settings = $this.settings;
-        var data = el.data('menu');
-        if (!data) {
-            data = {};
-            data.arrow = el.children('.'+prefix+'_arrow');
-            data.ul = el.next('ul');
-            data.parent = el.parent();
-            //Separated parent link structure
-            if (data.parent.hasClass(prefix+'_parent-link')) {
-                data.parent = el.parent().parent();
-                data.ul = el.parent().next('ul');
-            }
-            el.data('menu', data);
+            var $this = this;
+    var settings = $this.settings;
+    var data = el.data('menu');
+    if (!data) {
+        data = {};
+        data.arrow = el.children('.' + prefix + '_arrow');
+        data.ul = el.next('ul');
+        data.parent = el.parent();
+        //Separated parent link structure
+        if (data.parent.hasClass(prefix + '_parent-link')) {
+            data.parent = el.parent().parent();
+            data.ul = el.parent().next('ul');
         }
-        if (data.parent.hasClass(prefix+'_collapsed')) {
-            data.arrow.html(settings.openedSymbol);
-            data.parent.removeClass(prefix+'_collapsed');
-            data.parent.addClass(prefix+'_open');
-            data.parent.addClass(prefix+'_animating');
-            $this._visibilityToggle(data.ul, data.parent, true, el);
-        } else {
-            data.arrow.html(settings.closedSymbol);
-            data.parent.addClass(prefix+'_collapsed');
-            data.parent.removeClass(prefix+'_open');
-            data.parent.addClass(prefix+'_animating');
-            $this._visibilityToggle(data.ul, data.parent, true, el);
-        }
+        el.data('menu', data);
+    }
+
+    if (data.parent.hasClass(prefix + '_collapsed')) {
+
+        //  **** Begin custom code ****
+        data.parent.siblings('.slicknav_open').each(function () {
+            var $li = $(this);
+            var $el = $li.children('a');
+            var $ul = $el.next('ul');
+            $el.children('.' + prefix + '_arrow').html(settings.closedSymbol);
+            $li.addClass(prefix + '_collapsed').addClass(prefix + '_animating').removeClass(prefix + '_open');
+            $this._visibilityToggle($ul, $li, true, $el);
+        });
+        //  **** End custom code ****
+
+        data.arrow.html(settings.openedSymbol);
+        data.parent.removeClass(prefix + '_collapsed');
+        data.parent.addClass(prefix + '_open');
+        data.parent.addClass(prefix + '_animating');
+        $this._visibilityToggle(data.ul, data.parent, true, el);
+    } else {
+        data.arrow.html(settings.closedSymbol);
+        data.parent.addClass(prefix + '_collapsed');
+        data.parent.removeClass(prefix + '_open');
+        data.parent.addClass(prefix + '_animating');
+        $this._visibilityToggle(data.ul, data.parent, true, el);
+    }
     };
 
     // toggle actual visibility and accessibility tags
