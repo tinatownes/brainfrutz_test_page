@@ -387,7 +387,7 @@
     if (data.parent.hasClass(prefix + '_collapsed')) {
 
         //  **** Begin custom code ****
-        data.parent.siblings('.9dbdf2v_open').each(function () {
+        data.parent.siblings('.slicknav_open').each(function () {
             var $li = $(this);
             var $el = $li.children('a');
             var $ul = $el.next('ul');
